@@ -6,7 +6,7 @@
     tools:context="com.mm.renrenhua.custom.MainActivity">
 
     <Button
-        android:text="索引"
+        android:text="索引控件"
         android:id="@+id/btn_index"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
