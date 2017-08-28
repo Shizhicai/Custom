@@ -3,11 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context="com.mm.renrenhua.custom.MainActivity">
 
     <Button
         android:text="索引控件"
         android:id="@+id/btn_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="文字图片居中"
+        android:id="@+id/btn_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

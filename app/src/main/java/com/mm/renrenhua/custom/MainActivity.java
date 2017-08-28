@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mm.renrenhua.custom.demo1.IndexActivity;
+import com.mm.renrenhua.custom.demo2.TextImgActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.btn_index).setOnClickListener(this);
+        findViewById(R.id.btn_center).setOnClickListener(this);
     }
 
     @Override
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn_index:
                 startActivity(new Intent(this, IndexActivity.class));
+                break;
+            case R.id.btn_center:
+                startActivity(new Intent(this, TextImgActivity.class));
                 break;
         }
     }

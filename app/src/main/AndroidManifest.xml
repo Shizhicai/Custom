@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".demo1.IndexActivity" />
+        <activity android:name=".demo2.TextImgActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="49dp">
+
+
+    <com.mm.renrenhua.custom.demo2.TextImgCenterView
+        android:drawableLeft="@drawable/icon_my_advice"
+        android:text="关于我们"
+        android:drawablePadding="30dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <com.mm.renrenhua.custom.demo2.TextImgCenterView
+        android:drawableLeft="@drawable/icon_my_question"
+        android:text="意见反馈"
+        android:drawablePadding="30dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+</LinearLayout>

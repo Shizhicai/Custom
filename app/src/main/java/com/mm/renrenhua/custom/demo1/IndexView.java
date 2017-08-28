@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.PopupWindow;
 
 /**
  * @ 作 用：
@@ -20,13 +21,14 @@ import android.view.View;
 public class IndexView extends View {
     private static Paint paint = new Paint();
     private static final String TAG = "Index";
+    private PopupWindow window;
     private String[] str = {
             "#", "A", "B", "C", "D", "E", "F", "G", "H",
             "I", "J", "K", "L", "M", "N", "O", "P", "Q",
             "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
     };
-    private String selectColor = "#888888";
-    private String defColor = "#fa7829";
+    private String selectColor = "#fa7829";
+    private String defColor = "#888888";
     private int selectPosition = -1;
 
 
@@ -68,8 +70,9 @@ public class IndexView extends View {
         float centerHeight;
         Paint.FontMetrics fm = paint.getFontMetrics();
 
-
         float baseLine = (fm.bottom - fm.top) / 2 - fm.bottom;
+
+        //画字
         for (int i = 0; i < str.length; i++) {
             paint.setColor(Color.parseColor(selectPosition == i ? selectColor : defColor));
             //中间线
@@ -92,6 +95,6 @@ public class IndexView extends View {
                 break;
         }
         invalidate();
-        return super.onTouchEvent(event);
+        return true;
     }
 }
