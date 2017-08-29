@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.mm.renrenhua.custom.demo1.IndexActivity;
 import com.mm.renrenhua.custom.demo2.TextImgActivity;
+import com.mm.renrenhua.custom.demo3.RippleActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btn_index).setOnClickListener(this);
         findViewById(R.id.btn_center).setOnClickListener(this);
+        findViewById(R.id.btn_ripple).setOnClickListener(this);
     }
 
     @Override
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_center:
                 startActivity(new Intent(this, TextImgActivity.class));
+                break;
+            case R.id.btn_ripple:
+                startActivity(new Intent(this, RippleActivity.class));
                 break;
         }
     }
