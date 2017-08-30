@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".demo1.IndexActivity" />
         <activity android:name=".demo2.TextImgActivity" />
-        <activity android:name=".demo3.RippleActivity"></activity>
+        <activity android:name=".demo3.RippleActivity" />
     </application>
 
 </manifest>

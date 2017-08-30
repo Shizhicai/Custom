@@ -1,5 +1,6 @@
 package com.mm.renrenhua.custom.demo3;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -8,6 +9,7 @@ import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 
 /**
  * @ 作 者：S Z C
@@ -18,9 +20,12 @@ import android.view.View;
 public class RippleView extends View {
 
     private Paint mPaint;
-    private int originY = 300;
-    private int waveLenth = 300;
+    private int originY = 400;
+    private int waveLenth = 300;//
     private Path mPath;
+    private float waveLenthPercent = 0.8f;//水波纹进度
+    private int dx;
+    private ValueAnimator animator;
 
     public RippleView(Context context) {
         super(context);
@@ -49,15 +54,38 @@ public class RippleView extends View {
             mPath = new Path();
         mPath.reset();
 
-        int halfWaveLenth = (int) (waveLenth / 2);
-        mPath.moveTo(-waveLenth, originY);
+        int halfWaveLenth = (waveLenth / 2);
+        mPath.moveTo(-waveLenth + dx, originY);
 
         for (int i = -waveLenth; i < getWidth() + waveLenth; i += waveLenth) {
-            mPath.rQuadTo((float) (halfWaveLenth / 2), 20, halfWaveLenth, 0);
-            mPath.rQuadTo((float) (halfWaveLenth / 2), -20, halfWaveLenth, 0);
+            mPath.rQuadTo((float) (halfWaveLenth / 2), 50 * waveLenthPercent, halfWaveLenth, 0);
+            mPath.rQuadTo((float) (halfWaveLenth / 2), 50 * -waveLenthPercent, halfWaveLenth, 0);
         }
-        mPath.lineTo(getWidth(),getHeight());
-        mPath.lineTo(0,getHeight());
-        canvas.drawPath(mPath,mPaint);
+        mPath.lineTo(getWidth(), getHeight());
+        mPath.lineTo(0, getHeight());
+        canvas.drawPath(mPath, mPaint);
+    }
+
+    public void startAnim() {
+        if (animator == null) {
+            animator = ValueAnimator.ofInt(0, waveLenth);
+            animator.setDuration(1000);
+            animator.setRepeatCount(ValueAnimator.INFINITE);//无限循环
+            animator.setInterpolator(new LinearInterpolator());
+
+            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    dx = (int) animation.getAnimatedValue();
+                    RippleView.this.postInvalidate();
+                }
+            });
+        }
+        animator.start();
+    }
+
+    public void cancel() {
+        if (animator != null)
+            animator.cancel();
     }
 }

@@ -63,7 +63,7 @@ public class IndexView extends View {
         canvas.drawCircle(width / 2, singleHeight / 2, singleHeight / 4, paint);//画圆点
         canvas.drawLine(0, singleHeight, width, singleHeight, paint);
         paint.setAntiAlias(true);
-        paint.setTextSize(22);
+        paint.setTextSize(30);
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setTypeface(Typeface.DEFAULT_BOLD);//字体加粗
         float centerWidth = width / 2.0f;

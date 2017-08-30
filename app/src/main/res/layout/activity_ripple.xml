@@ -3,9 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.mm.renrenhua.custom.demo3.RippleActivity">
 
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.mm.renrenhua.custom.demo3.RippleView
+        android:id="@+id/ripple"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

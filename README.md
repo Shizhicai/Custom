@@ -64,3 +64,4 @@ paint中基本设置的函数：
         DiscretePathEffect
         PathDashPathEffect
         SumPathEffect
+
